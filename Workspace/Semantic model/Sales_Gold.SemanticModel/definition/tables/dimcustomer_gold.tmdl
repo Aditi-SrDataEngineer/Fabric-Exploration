@@ -1,0 +1,64 @@
+table dimcustomer_gold
+	lineageTag: 9cc1c405-bac9-481d-8f5e-e9c5378aed11
+	sourceLineageTag: [dbo].[dimcustomer_gold]
+
+	column CustomerName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 574ea469-3342-40aa-bf2b-743ae7a25b52
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cf180a40-8fc1-4a9d-b77b-b1cb5d30ae81
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column First
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: dd94b4dd-f2de-4653-9647-75d5f997a4bd
+		sourceLineageTag: First
+		summarizeBy: none
+		sourceColumn: First
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f38ca3ba-8690-405f-aa87-7cab61f44a44
+		sourceLineageTag: Last
+		summarizeBy: none
+		sourceColumn: Last
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f1225d50-c349-4bbc-8ede-4487ae3e9d8d
+		sourceLineageTag: CustomerID
+		summarizeBy: count
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimcustomer_gold = entity
+		mode: directLake
+		source
+			entityName: dimcustomer_gold
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

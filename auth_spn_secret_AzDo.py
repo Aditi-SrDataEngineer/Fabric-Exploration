@@ -15,7 +15,7 @@ import argparse
 
 
 parser = argparse.ArgumentParser(description='Process some variables.')
-parser.add_argument('--WorkspaceId', type=str)
+parser.add_argument('3311b742-3f58-4090-bb92-97cbf996f60', type=str)
 parser.add_argument('--Environment', type=str)
 parser.add_argument('--RepositoryDirectory', type=str)
 parser.add_argument('--ItemsInScope', type=str)

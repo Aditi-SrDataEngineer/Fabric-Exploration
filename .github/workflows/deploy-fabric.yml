@@ -29,7 +29,7 @@ on:
         EntraObjectId:
           description: 'Object Id of the Microsoft Entra user'
           required: true
-          default: '00000000-0000-0000-0000-000000000000'
+          default: '61b27b32-fd37-46b4-9a89-02d3ba637b4d'
           type: string
 
 # Specify ResourceUrl

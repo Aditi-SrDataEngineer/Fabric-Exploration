@@ -23,7 +23,7 @@ on:
         CapacityName:
           description: 'Fabric capacity name'
           required: true
-          default: 'Trial'
+          default: 'Trial-20250722T062758Z-bhsOvb3zpEOLbcp6MWi3Dw'
           type: string
         # This is to add a user during the script, you are more than welcome to remove this parameter
         EntraObjectId:

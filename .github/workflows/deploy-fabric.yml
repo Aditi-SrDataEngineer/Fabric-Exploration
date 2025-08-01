@@ -68,9 +68,9 @@ jobs:
             fab auth login -u ${{secrets.AZURE_CLIENT_ID}} -p ${{secrets.AZURE_CLIENT_SECRET}} --tenant ${{secrets.AZURE_TENANT_ID}} 
 
       # Create the workspace with Fabric-CLI
-      - name: Create the workspace with ms-fabric-cli
-        run: |
-            fab create ${{github.event.inputs.WorkspaceName}}.Workspace -P capacityname=${{github.event.inputs.CapacityName}}
+      #- name: Create the workspace with ms-fabric-cli
+        #run: |
+            #fab create ${{github.event.inputs.WorkspaceName}}.Workspace -P capacityname=${{github.event.inputs.CapacityName}}
 
       # Add permissions to workspace
       - name: Add permissions to workspace

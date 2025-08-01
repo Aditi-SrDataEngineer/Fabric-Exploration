@@ -73,9 +73,9 @@ jobs:
             #fab create ${{github.event.inputs.WorkspaceName}}.Workspace -P capacityname=${{github.event.inputs.CapacityName}}
 
       # Add permissions to workspace
-      - name: Add permissions to workspace
-        run: |
-          fab acl set ${{github.event.inputs.WorkspaceName}}.Workspace -I ${{github.event.inputs.EntraObjectId}} -R admin -f
+      #- name: Add permissions to workspace
+        #run: |
+          #fab acl set ${{github.event.inputs.WorkspaceName}}.Workspace -I ${{github.event.inputs.EntraObjectId}} -R admin -f
 
       # # Get Workspace Id
       # - name: Get Workspace Id

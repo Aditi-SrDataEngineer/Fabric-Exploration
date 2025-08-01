@@ -101,4 +101,4 @@ jobs:
       - name: Run script to get the workspace Id and deploy with fabric-cicd to new workspace
         run: |
           $WorkspaceId = fab get ${{github.event.inputs.WorkspaceName}}.Workspace -q id
-          python auth_spn_secret_AzDo.py --WorkspaceId $WorkspaceId --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
+          python auth_spn_secret_AzDo.py --WorkspaceId $WorkspaceId --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{env.ItemsInScope}}

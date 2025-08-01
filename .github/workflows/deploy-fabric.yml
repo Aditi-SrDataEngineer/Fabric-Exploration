@@ -36,7 +36,7 @@ on:
 # You can also add items in scope here
 env:
   resourceUrl: https://api.fabric.microsoft.com
-  # ItemsInScope: "Notebook,Environment,Report,SemanticModel,MirroredDatabase"
+  ItemsInScope: "Notebook,Environment,Report,SemanticModel,MirroredDatabase"
 
 jobs:
 

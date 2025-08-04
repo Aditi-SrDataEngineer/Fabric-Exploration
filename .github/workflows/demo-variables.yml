@@ -51,16 +51,16 @@ jobs:
         run: |
             Install-Module -Name Az.Accounts -AllowClobber -Force
 
-            $SecureStringPwd = ConvertTo-SecureString ${{secrets.k7r8Q~yLYdHiNun46.uES_0sjzMgVr.UJJ-qXcKg}} -AsPlainText -Force
-            $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.42dddacc-635c-4c1f-9722-938546301fac}}, $SecureStringPwd
+            $SecureStringPwd = ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
+            $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd
                               
-            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.db9d3973-86be-494d-b6a9-e5a3a4f09d8b}}    
+            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}    
 
             $fabricToken = (Get-AzAccessToken -ResourceUrl ${{env.resourceUrl}}).Token
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Test
-        run: python auth_spn_secret_AzDo.py 3311b742-3f58-4090-bb92-97cbf996f60f ${{vars.TestWorkspace}} --Environment "Aditi-Test" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
+        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.TestWorkspace}} --Environment "Test" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
           
   # Job to deploy to Test via fabric-cicd
   'Deploy_to_Prod':
@@ -102,4 +102,4 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Prod
-        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.ProdWorkspace}} --Environment "Aditi-Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
+        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.ProdWorkspace}} --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}

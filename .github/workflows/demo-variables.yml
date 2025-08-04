@@ -102,4 +102,4 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Prod
-        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.ProdWorkspace}} --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
+        run: python auth_spn_secret_AzDo.py --WorkspaceId "8344ae57-aaef-4a38-a8d9-9fd15125992e" --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}

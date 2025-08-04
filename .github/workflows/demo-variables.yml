@@ -18,7 +18,8 @@ on:
 # Specify ResourceUrl and items in scope
 env:
   resourceUrl: https://api.fabric.microsoft.com
-  # ItemsInScope: "Notebook,Environment,Report,SemanticModel,MirroredDatabase"
+  TestWorkspace: 3311b742-3f58-4090-bb92-97cbf996f60f
+  ItemsInScope: "Notebook,Environment,Report,SemanticModel,MirroredDatabase"
 
 jobs:
 
@@ -60,7 +61,7 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Test
-        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{vars.TestWorkspace}} --Environment "Test" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{vars.ItemsInScope}}
+        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{env.TestWorkspace}} --Environment "Test" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{env.ItemsInScope}}
           
   # Job to deploy to Test via fabric-cicd
   'Deploy_to_Prod':
@@ -102,4 +103,4 @@ jobs:
 
        # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Prod
-        run: python auth_spn_secret_AzDo.py --WorkspaceId "8344ae57-aaef-4a38-a8d9-9fd15125992e" --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{env.ItemsInScope}}
+        run: python auth_spn_secret_AzDo.py --WorkspaceId ${{env.TestWorkspace}} --Environment "Prod" --RepositoryDirectory ".\workspace" --ItemsInScope  ${{env.ItemsInScope}}

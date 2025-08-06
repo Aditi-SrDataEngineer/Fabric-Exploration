@@ -1,0 +1,6 @@
+find_replace:
+    # Replace Power BI Text
+    - find_value: "3311b742-3f58-4090-bb92-97cbf996f60f"
+      replace_value:
+        Test: "4ce63028-8eec-48dd-a1f2-c0b297b34cf4"
+        Prod: "a9c30fef-932a-46d1-bd05-d306736d4638"

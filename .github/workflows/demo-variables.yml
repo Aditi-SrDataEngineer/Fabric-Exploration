@@ -19,7 +19,7 @@ on:
 env:
   resourceUrl: https://api.fabric.microsoft.com
   TestWorkspace: 3311b742-3f58-4090-bb92-97cbf996f60f
-  ItemsInScope: "Notebook,Environment,Report,MirroredDatabase"
+  ItemsInScope: "Notebook,Environment,Report,SemanticModel,MirroredDatabase"
 
 jobs:
 

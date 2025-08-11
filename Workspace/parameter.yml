@@ -32,5 +32,5 @@ find_replace:
     #Lab8
     - find_value: "5040a824-c696-4fbd-91cc-93df3d2e0056"
       replace_value:
-        Test: "f6ae1f63-d091-4ada-b0a8-2b6571f1b717
+        Test: "f6ae1f63-d091-4ada-b0a8-2b6571f1b717"
         Prod: "f6ae1f63-d091-4ada-b0a8-2b6571f1b717"
